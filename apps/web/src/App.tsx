@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDocuments } from './hooks/useDocuments';
-import { useTheme } from './hooks/useTheme';
 import { useDebounce } from './hooks/useDebounce';
 import { Header } from './components/common/Header';
 import { DocumentSidebar } from './features/documents/DocumentSidebar';
@@ -25,7 +24,6 @@ export const App: React.FC = () => {
     isDirty,
   } = useDocuments();
 
-  const { theme, setTheme, isDark } = useTheme();
   const [activeView, setActiveView] = useState<ActiveView>('split');
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
   const [isExportOpen, setIsExportOpen] = useState<boolean>(false);
@@ -90,8 +88,6 @@ export const App: React.FC = () => {
           docTitle={currentDoc?.title || 'MarkFlow'}
           isSaving={isSaving}
           isDirty={isDirty}
-          theme={theme}
-          onSetTheme={setTheme}
           activeView={activeView}
           onChangeView={setActiveView}
           onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
@@ -111,7 +107,6 @@ export const App: React.FC = () => {
                 <CodeEditor
                   content={currentDoc.content}
                   onChange={updateContent}
-                  isDark={isDark}
                   docId={currentDoc.id}
                 />
               )}

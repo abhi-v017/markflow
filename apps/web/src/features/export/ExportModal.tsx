@@ -5,8 +5,6 @@ import { Download, Printer, Copy, Check, X, FileCode, Sparkles } from 'lucide-re
 
 interface ExportModalProps {
   document: DocumentItem;
-  theme?: string;
-  isDark?: boolean;
   isOpen: boolean;
   onClose: () => void;
 }

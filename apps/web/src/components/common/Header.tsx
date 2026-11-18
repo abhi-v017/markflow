@@ -15,8 +15,6 @@ interface HeaderProps {
   docTitle: string;
   isSaving: boolean;
   isDirty: boolean;
-  theme?: string;
-  onSetTheme?: (theme: any) => void;
   activeView: ActiveView;
   onChangeView: (view: ActiveView) => void;
   onToggleSidebar: () => void;

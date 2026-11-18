@@ -9,3 +9,7 @@ build/
 coverage/
 .turbo/
 .cache/
+.vercel/
+.pnpm-store/
+.env
+.env.local

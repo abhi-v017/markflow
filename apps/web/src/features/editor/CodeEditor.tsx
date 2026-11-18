@@ -24,7 +24,6 @@ import {
 interface CodeEditorProps {
   content: string;
   onChange: (value: string) => void;
-  isDark?: boolean;
   docId: string;
 }
 
