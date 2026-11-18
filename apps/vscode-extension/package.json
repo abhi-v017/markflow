@@ -1,0 +1,89 @@
+{
+  "name": "markflow-preview",
+  "displayName": "MarkFlow Markdown Preview",
+  "description": "Fast, secure, and native Markdown preview and utilities powered by MarkFlow",
+  "version": "0.1.0",
+  "publisher": "markflow",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "markflow.openPreview",
+        "title": "MarkFlow: Open Markdown Preview",
+        "category": "MarkFlow",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "markflow.refreshPreview",
+        "title": "MarkFlow: Refresh Preview",
+        "category": "MarkFlow",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "markflow.exportHtml",
+        "title": "MarkFlow: Export as HTML",
+        "category": "MarkFlow",
+        "icon": "$(export)"
+      },
+      {
+        "command": "markflow.copyToc",
+        "title": "MarkFlow: Copy Table of Contents",
+        "category": "MarkFlow",
+        "icon": "$(list-ordered)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "markflow.openPreview",
+          "when": "resourceLangId == markdown",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "markflow.openPreview",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "command": "markflow.refreshPreview",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "command": "markflow.exportHtml",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "command": "markflow.copyToc",
+          "when": "resourceLangId == markdown"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node esbuild.js --production",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch"
+  },
+  "dependencies": {
+    "@markflow/markdown-core": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.26.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.5"
+  }
+}

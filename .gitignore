@@ -1,0 +1,11 @@
+node_modules/
+dist/
+out/
+build/
+.vscode-test/
+*.vsix
+.DS_Store
+*.log
+coverage/
+.turbo/
+.cache/

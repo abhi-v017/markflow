@@ -1,0 +1,32 @@
+{
+  "name": "markflow-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MarkFlow - Production-quality Markdown workspace (Web + VS Code Extension)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=@markflow/web run dev",
+    "build": "npm --workspace=@markflow/markdown-core run build && npm --workspace=@markflow/web run build",
+    "build:web": "npm --workspace=@markflow/web run build",
+    "build:core": "npm --workspace=@markflow/markdown-core run build",
+    "build:vscode": "npm --workspace=markflow-preview run build",
+    "test": "vitest run",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,css}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
+  "pnpm": {
+    "overrides": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  }
+}
