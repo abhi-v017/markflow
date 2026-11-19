@@ -2,9 +2,14 @@
   "name": "markflow-preview",
   "displayName": "MarkFlow Markdown Preview",
   "description": "Fast, secure, and native Markdown preview and utilities powered by MarkFlow",
-  "version": "0.1.0",
-  "publisher": "markflow",
+  "version": "0.1.1",
+  "icon": "media/icon.png",
+  "publisher": "abekdev",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhi-v017/markflow.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -72,8 +77,8 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "node esbuild.js --production",
-    "build": "node esbuild.js --production",
+    "vscode:prepublish": "node media/generate-icon.cjs && node esbuild.js --production",
+    "build": "node media/generate-icon.cjs && node esbuild.js --production",
     "watch": "node esbuild.js --watch"
   },
   "dependencies": {
