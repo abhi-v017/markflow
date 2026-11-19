@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "npm --workspace=@markflow/web run dev",
-    "build": "npm --workspace=@markflow/markdown-core run build && npm --workspace=@markflow/web run build",
+    "build": "npm --workspace=@markflow/markdown-core run build && npm --workspace=@markflow/web run build && node -e \"require('fs').cpSync('apps/web/dist', 'dist', {recursive: true})\"",
     "build:web": "npm --workspace=@markflow/web run build",
     "build:core": "npm --workspace=@markflow/markdown-core run build",
     "build:vscode": "npm --workspace=markflow-preview run build",
