@@ -1,6 +1,6 @@
 # MarkFlow — Modern Markdown Workspace & Live Preview ⚡
 
-[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
+[![Version](https://img.shields.io/badge/version-0.1.2-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Local First](https://img.shields.io/badge/Privacy-100%25%20Local-emerald.svg?style=flat-square)](#-security--privacy-first)
 [![VS Code](https://img.shields.io/badge/VS%20Code-v1.85+-orange.svg?style=flat-square)](https://code.visualstudio.com/)

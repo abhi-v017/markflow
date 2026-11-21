@@ -2,7 +2,7 @@
   "name": "markflow-preview",
   "displayName": "MarkFlow Markdown Preview",
   "description": "Fast, secure, and native Markdown preview and utilities powered by MarkFlow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "icon": "media/icon.png",
   "publisher": "abekdev",
   "license": "MIT",
