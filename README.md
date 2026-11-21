@@ -1,119 +1,108 @@
 # MarkFlow ⚡
 
-A high-performance, local-first Markdown workspace and developer productivity tool, available as a standalone Web Application and a Visual Studio Code Extension powered by a shared Markdown engine.
+[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Local First](https://img.shields.io/badge/Privacy-100%25%20Local-emerald.svg?style=flat-square)](#core-product-philosophy)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg?style=flat-square)](https://nodejs.org/)
+[![VS Code](https://img.shields.io/badge/VS%20Code-v1.85+-orange.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
+
+A high-performance, local-first **Markdown workspace and developer productivity suite**, available as a standalone **Web Application** and an official **Visual Studio Code Extension**, both powered by a shared, universal Markdown processing engine.
 
 ---
 
-## Overview
+## 📸 Product Showcase
 
-MarkFlow is designed with a strict **local-first, minimal-dependency** philosophy:
-- **Write Markdown Once**: Identical rendering, parsing, syntax highlighting, and table of contents extraction across the Web and VS Code.
-- **Privacy by Design**: Zero telemetry, zero mandatory cloud infrastructure, and no accounts. Documents stay on your machine.
-- **Instant Speed**: Lightweight editor powered by CodeMirror 6 and debounced live rendering.
+### 1. Web Application (`@markflow/web`)
+> Pure AMOLED Black liquid glass interface with live synchronized preview, CodeMirror 6 editor, Table of Contents drawer, and local IndexedDB persistence.
+
+![MarkFlow Web Workspace](docs/screenshots/web-split-view.png)
+
+### 2. VS Code Extension (`markflow-preview`)
+> Side-by-side native Markdown preview, real-time word/character count, reading time estimation, and syntax highlighting.
+
+![MarkFlow VS Code Extension](docs/screenshots/vscode-preview.png)
 
 ---
 
-## Monorepo Architecture
+## 💡 Core Product Philosophy
+
+- **Write Markdown Once**: Identical rendering, parsing, syntax highlighting, and Table of Contents extraction across the Web and VS Code.
+- **Local-First & Private**: Zero telemetry, zero mandatory cloud accounts, and no third-party servers. Your documents remain strictly on your machine.
+- **Fast Startup & Minimal Footprint**: Modular architecture with debounced preview updates ($150\text{ms}$) and minimal dependency footprint.
+
+---
+
+## 🏛️ Monorepo Architecture
 
 ```
 markflow/
 ├── apps/
-│   ├── web/                    # React 18 + Vite + Tailwind CSS + idb
-│   └── vscode-extension/       # Native VS Code Extension + Webview API
+│   ├── web/                    # React 18 + Vite + CodeMirror 6 + Tailwind CSS + IndexedDB
+│   └── vscode-extension/       # Native VS Code Extension (Webview API + CSP)
 ├── packages/
 │   └── markdown-core/          # Shared engine (markdown-it, highlight.js, DOMPurify)
-├── docs/                       # Architecture & Development guides
-└── .github/workflows/          # Continuous Integration workflow
+├── docs/                       # Architectural specs & development guides
+└── docs/screenshots/          # High-resolution showcase assets
 ```
 
----
-
-## Features
-
-### Web Application (`@markflow/web`)
-- **Responsive 3-Panel Layout**: Document sidebar, CodeMirror 6 editor, and live HTML preview with collapsible Table of Contents.
-- **Local Persistence**: Client-side storage via IndexedDB (`idb`) with debounced auto-save.
-- **Document Management**: Create, rename, duplicate, search, and delete documents with confirmation.
-- **Themes**: Seamless support for Light, Dark, and System color schemes.
-- **Live Metrics**: Real-time word count, character count, and reading time estimation.
-- **Export Options**: Download raw `.md`, standalone styled `.html`, or print to PDF.
-
-### VS Code Extension (`@markflow/vscode-extension`)
-- **Native Commands**:
-  - `MarkFlow: Open Markdown Preview` (opens synchronized preview beside active document)
-  - `MarkFlow: Refresh Preview`
-  - `MarkFlow: Export as HTML` (saves self-contained HTML file via file picker)
-  - `MarkFlow: Copy Table of Contents` (copies formatted Markdown heading list to clipboard)
-- **Native Look & Feel**: Dynamically styled with VS Code theme CSS variables.
-- **Security**: Strict Content Security Policy (CSP) with cryptographic nonces and HTML sanitization.
+### The Shared Engine: `@markflow/markdown-core`
+All parsing, AST traversal, syntax highlighting, slug generation, and metrics are encapsulated within `@markflow/markdown-core`. Fix a Markdown rendering rule once, and both the Web App and VS Code Extension immediately benefit.
 
 ---
 
-## Technology Stack
-
-| Layer | Technologies |
-| :--- | :--- |
-| **Workspace & Tooling** | pnpm Workspaces, TypeScript, tsup, esbuild, Vitest |
-| **Core Engine** | markdown-it, highlight.js, DOMPurify |
-| **Web Frontend** | React 18, Vite, Tailwind CSS, Lucide React, CodeMirror 6, idb |
-| **VS Code Extension** | VS Code Extension API, Webview API, @vscode/vsce |
-
----
-
-## Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js >= 18.0.0
-- pnpm >= 9.0.0
+- npm >= 9.0.0
 
-### Installation
+### Installation & Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/markflow.git
+# 1. Clone the repository
+git clone https://github.com/abhi-v017/markflow.git
 cd markflow
 
-# Install all workspace dependencies
-pnpm install
-```
+# 2. Install dependencies across all workspaces
+npm install
 
-### Development
+# 3. Start the Web Workspace in dev mode
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build All Workspaces
 
 ```bash
-# Run tests across all packages
-pnpm test
-
-# Start the web application in dev mode
-pnpm --filter @markflow/web dev
-
 # Build the shared engine and all packages
-pnpm build
+npm run build
 ```
 
 ---
 
-## Deployment & Distribution
+## 📦 Deployment & Marketplace
 
-### Web Application (Cloudflare Pages / Vercel)
-The web application is a static Single Page Application (SPA).
-1. Build the web app:
-   ```bash
-   pnpm --filter @markflow/web build
-   ```
-2. Deploy the `apps/web/dist` directory to Cloudflare Pages, Vercel, or GitHub Pages. No backend or environment variables required.
+### Web Application (Vercel)
+The web application is pre-configured with [vercel.json](vercel.json) for instant deployment:
+```bash
+npx vercel --prod
+```
 
-### VS Code Extension (.vsix)
-Package the extension locally using `@vscode/vsce`:
+### VS Code Extension (Marketplace & VSIX)
+Build and package the extension locally:
 ```bash
 cd apps/vscode-extension
-pnpm run build
-npx @vscode/vsce package
+npm run build
+npx @vscode/vsce package --no-dependencies -o abekdev.markflow-preview-0.1.1.vsix
 ```
-Install the generated `.vsix` in VS Code via:
-`Extensions View -> ... Menu -> Install from VSIX...`
+Install directly into VS Code:
+```text
+VS Code -> Extensions (Ctrl+Shift+X) -> "..." Menu -> "Install from VSIX..."
+```
+Or install from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview).
 
 ---
 
-## License
+## 📄 License
 
-This project is open-source software licensed under the MIT License.
+Open-source software licensed under the [MIT License](LICENSE).
