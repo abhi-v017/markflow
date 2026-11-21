@@ -1,6 +1,6 @@
 # MarkFlow — Modern Markdown Workspace & Live Preview ⚡
 
-[![Version](https://img.shields.io/badge/version-0.1.2-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
+[![Version](https://img.shields.io/badge/version-0.1.3-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Local First](https://img.shields.io/badge/Privacy-100%25%20Local-emerald.svg?style=flat-square)](#-security--privacy-first)
 [![VS Code](https://img.shields.io/badge/VS%20Code-v1.85+-orange.svg?style=flat-square)](https://code.visualstudio.com/)
@@ -11,7 +11,7 @@ A lightweight, distraction-free **Markdown preview and developer productivity to
 
 ## 📸 Live Preview Showcase
 
-![MarkFlow Live Preview in VS Code](media/vscode-preview.png)
+![MarkFlow Live Preview in VS Code](https://raw.githubusercontent.com/abhi-v017/markflow/main/apps/vscode-extension/media/vscode-preview.png)
 
 > **Side-by-side synchronized rendering**: Type in your Markdown editor on the left, and watch MarkFlow render formatted typography, syntax-highlighted code blocks, and real-time document metrics on the right.
 
@@ -26,7 +26,7 @@ You don't need any complex configuration. MarkFlow works out of the box:
    - **Click the Top-Right Icon:** Click the MarkFlow preview icon in your editor tab toolbar.
    - **Command Palette:** Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on macOS), type **`MarkFlow: Open Markdown Preview`**, and press **Enter**.
 
-![Command Palette](media/vscode-command-palette.png)
+![Command Palette](https://raw.githubusercontent.com/abhi-v017/markflow/main/apps/vscode-extension/media/vscode-command-palette.png)
 
 3. Start typing! The preview updates smoothly beside your code in real time.
 

@@ -1,6 +1,6 @@
 # MarkFlow ⚡
 
-[![Version](https://img.shields.io/badge/version-0.1.2-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
+[![Version](https://img.shields.io/badge/version-0.1.3-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=abekdev.markflow-preview)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Local First](https://img.shields.io/badge/Privacy-100%25%20Local-emerald.svg?style=flat-square)](#core-product-philosophy)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg?style=flat-square)](https://nodejs.org/)
@@ -15,12 +15,12 @@ A high-performance, local-first **Markdown workspace and developer productivity 
 ### 1. Web Application (`@markflow/web`)
 > Pure AMOLED Black liquid glass interface with live synchronized preview, CodeMirror 6 editor, Table of Contents drawer, and local IndexedDB persistence.
 
-![MarkFlow Web Workspace](docs/screenshots/web-split-view.png)
+![MarkFlow Web Workspace](https://raw.githubusercontent.com/abhi-v017/markflow/main/docs/screenshots/web-split-view.png)
 
 ### 2. VS Code Extension (`markflow-preview`)
 > Side-by-side native Markdown preview, real-time word/character count, reading time estimation, and syntax highlighting.
 
-![MarkFlow VS Code Extension](docs/screenshots/vscode-preview.png)
+![MarkFlow VS Code Extension](https://raw.githubusercontent.com/abhi-v017/markflow/main/docs/screenshots/vscode-preview.png)
 
 ---
 
